@@ -30,6 +30,13 @@ const nextConfig: NextConfig = {
         source: '/fonts/:path*',
         headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
+      {
+        // CAD geometry is versioned in its file name (v16) and only fetched once.
+        source: '/data/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=604800, stale-while-revalidate=86400' },
+        ],
+      },
     ];
   },
   async redirects() {
