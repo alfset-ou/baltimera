@@ -1,0 +1,4 @@
+# Local reference build of the designer's static site — never deployed.
+dist/
+# Screenshots produced by the parity scripts.
+.verify/
